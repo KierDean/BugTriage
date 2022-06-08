@@ -1,6 +1,6 @@
 from flask import Flask
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 '''
 @app.route("/")
 def hello():
@@ -12,5 +12,5 @@ def home():
     return "<h1>High Priority</h1>"
 
 if __name__ == '__main__':
-    app.run(port=9090)
+    app.run(host='0.0.0.0',port=9090)
 
