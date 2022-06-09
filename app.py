@@ -6,11 +6,11 @@ from azure.storage.queue import (
 )
 import os, uuid
 app = Flask(__name__)
-'''
+
 @app.route('/')
 def home():
     return "<h1>We're home<h>"
-
+'''
 @app.route('/addtoq')
 def home():    
     q_name = "highpriority"
