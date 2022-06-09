@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 '''
@@ -7,8 +7,9 @@ def hello():
     return "High Priority"
 '''
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def home():
+    return request.data
     return "<h1>High Priority</h1>"
 
 if __name__ == '__main__':
