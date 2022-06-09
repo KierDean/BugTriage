@@ -1,4 +1,4 @@
-from flask import Flask, request
+'''from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -13,9 +13,7 @@ if __name__ == '__main__':
 
 
 
-
-
-'''from flask import Flask, request
+from flask import Flask, request
 import requests
 
 app = Flask(__name__)
@@ -45,7 +43,7 @@ def home():
 
     for i in data:
         if i['Priority'] == 'High':
-            request.post(url = highurl, data = data)'''
+            request.post(url = highurl, data = data)
 
 if __name__ == '__main__':
-    app.run()
+    app.run()'''
