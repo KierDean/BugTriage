@@ -7,8 +7,11 @@ from azure.storage.queue import (
 import os, uuid
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "<h1>We're home<h>"
 
-@app.route('/home')
+@app.route('/addtoq', method=['GET'])
 def home():
     connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
     q_name = "highpriority"
