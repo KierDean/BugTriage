@@ -13,6 +13,7 @@ message = u"Hello World"
 print("Adding message: " + message)
 queue_client.send_message(message)
 
+
 app = Flask(__name__)
 
 @app.route('/')
