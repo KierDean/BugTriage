@@ -7,18 +7,15 @@ from azure.storage.queue import (
 import os, uuid
 app = Flask(__name__)
 
-
 connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 q_name = "highpriority"
 queue_client = QueueClient.from_connection_string(connect_str, q_name)
 
-
-
-@app.route('/')
+@app.route('/home')
 def home():
-    message = u"Hello World"
-    print("Adding message: " + message)
+    message = "Pyton API testing 001"
     queue_client.send_message(message)
+
     return "<h1>Success</h1>"
 
 if __name__ == '__main__':
