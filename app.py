@@ -5,20 +5,21 @@ from azure.storage.queue import (
         BinaryBase64DecodePolicy
 )
 import os, uuid
+app = Flask(__name__)
+
+
 connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 q_name = "highpriority"
 queue_client = QueueClient.from_connection_string(connect_str, q_name)
 
-message = u"Hello World"
-print("Adding message: " + message)
-queue_client.send_message(message)
 
-
-app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "<h1>High Priority</h1>"
-    
+    message = u"Hello World"
+    print("Adding message: " + message)
+    queue_client.send_message(message)
+    return "<h1>Success</h1>"
+
 if __name__ == '__main__':
     app.run()
