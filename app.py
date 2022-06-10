@@ -14,12 +14,12 @@ def home():
 
 @app.route('/addtoq', methods=['POST'])
 def queue():    
-    q_name = "highpriority"
+    #q_name = "highpriority"
     connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-    queue_client = QueueClient.from_connection_string(connect_str, q_name)
+    #queue_client = QueueClient.from_connection_string(connect_str, q_name)
     message = "Pyton API testing 001"
-    queue_client.send_message(message)
-    return message
+    #queue_client.send_message(message)
+    return connect_str
 
 
 if __name__ == '__main__':
