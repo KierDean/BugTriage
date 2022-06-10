@@ -7,7 +7,7 @@ from azure.storage.queue import (
 import os, uuid
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', method=['GET'])
 def home():
     return "<h1>We're home<h>"
     
@@ -23,4 +23,4 @@ def home():
     '''
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run()
